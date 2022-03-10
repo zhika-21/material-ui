@@ -1,7 +1,7 @@
 import Product from "./Product"
 import { Grid } from "@mui/material"
 function Products({data}){
-    return(<><h1>Products, items</h1>
+    return(<><h1>Products 3</h1>
     <Grid container>
     {data.map((pr)=>{
         return(<Grid item xs={6}><Product data={pr} key={pr.id}/></Grid>)
