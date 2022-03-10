@@ -30,7 +30,7 @@ function Product({data}){
         <Grid container spacing={2}>
             <Grid item xs={4}><Button variant="contained" onClick={()=> setQuantity(prev => prev + 1)}>One More</Button></Grid>
             <Grid item xs={4}><TextField disabled value={quantity}/></Grid>
-            <Grid item xs={4}><Button onClick={()=> setQuantity(prev => prev -1)} variant="contained"> Minus one</Button></Grid>
+            <Grid item xs={4}><Button onClick={()=> setQuantity(prev => prev -1)} variant="contained"> Minus five</Button></Grid>
         </Grid>
         <Button fullWidth onClick={()=> console.log("doing something")}>Add To Card</Button>
         </Card>
