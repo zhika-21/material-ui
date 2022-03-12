@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { GeneralContext } from "../context/Context"
 import Card from "@mui/material/Card"
 import CardActions from "@mui/material/CardActions"
 import CardContent from "@mui/material/CardContent"
@@ -11,6 +12,7 @@ import { TextField } from "@mui/material"
 function Product({data}){
     const {image,title, description, price} = data
     const [quantity,setQuantity] = useState(0)
+    const{setTocart}=useContext(GeneralContext)
     
     return(<>
     <Card sx={{ maxWidth: 345 }}>
@@ -30,9 +32,9 @@ function Product({data}){
         <Grid container spacing={2}>
             <Grid item xs={4}><Button variant="contained" onClick={()=> setQuantity(prev => prev + 1)}>One More</Button></Grid>
             <Grid item xs={4}><TextField disabled value={quantity}/></Grid>
-            <Grid item xs={4}><Button onClick={()=> setQuantity(prev => prev -1)} variant="contained"> Minus six</Button></Grid>
+            <Grid item xs={4}><Button onClick={()=> setQuantity(prev => prev -1)} variant="contained"> Minus one</Button></Grid>
         </Grid>
-        <Button fullWidth onClick={()=> console.log("doing something")}>Add To Card</Button>
+        <Button fullWidth onClick={()=> setTocart(prev=>[...prev,{title:title, price:price,quantity:quantity}])}>Add To Card</Button>
         </Card>
         </>)
 }
