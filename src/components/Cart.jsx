@@ -6,7 +6,7 @@ function Cart(){
     const {cart} = useContext(GeneralContext)
 
     return(<>
-    <h1>CheckOut</h1>
+    <h1>Check Out</h1>
       {cart.map((element)=>{
 
         return(<p>{element.title}</p>

@@ -5,7 +5,7 @@ import { Grid } from "@mui/material"
 
 function Products(){
     const{allProducts}= useContext(GeneralContext)
-    return(<><h1>Products</h1>
+    return(<><h1> All Products</h1>
       
     
     <Grid container>
